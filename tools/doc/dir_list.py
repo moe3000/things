@@ -1,6 +1,9 @@
 # 目录树
 import os
 
+dirpath = 'E:\workspace\carloan-xinzhen\eloan-main\car-manager\src\main\\resources'
+rootpath = ''
+
 def travelTree(currentPath, count):
     if not os.path.exists(currentPath):
         return
@@ -8,9 +11,9 @@ def travelTree(currentPath, count):
         fileName = os.path.basename(currentPath)
         print('\t' * count + '├── ' + fileName)
     elif os.path.isdir(currentPath):
-        print('\t' * count + '├── ' + currentPath)
+        print('\t' * count + '├── ' + currentPath[29:])
         pathList = os.listdir(currentPath)
         for eachPath in pathList:
-            travelTree(currentPath + '/' + eachPath, count + 1)
+            travelTree(currentPath + '\\' + eachPath, count + 1)
 
-travelTree('E:\workspace\carloan-xinzhen\eloan-main\car-biz\src\main\java\com\\rongdu\eloan', 1)
+travelTree(dirpath, 1)
