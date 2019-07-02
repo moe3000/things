@@ -14,3 +14,8 @@ hs_err_pid*
 # vue js
 vue-study/dist
 vue-study/node_modules
+
+# idea
+*.iml
+.idea
+course/out
