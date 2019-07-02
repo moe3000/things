@@ -4,18 +4,18 @@ public class WaterFee {
 
     class Stage {
         //档位起始
-        public int start;
+        int start;
 
         //档位结束
-        public int end;
+        int end;
 
         //价格
-        public double price;
+        double price;
 
         //档位全部
-        public int full;
+        int full;
 
-        public Stage(int start, int end, double price) {
+        Stage(int start, int end, double price) {
             this.start = start;
             this.end = end;
             this.price = price;
@@ -23,7 +23,7 @@ public class WaterFee {
         }
     }
 
-    public double calculate(double one, double two, double three, double four, double five, double six) {
+    private double calculate(double one, double two, double three, double four, double five, double six) {
         Stage first = new Stage(0, 216, 2.90d);
         Stage second = new Stage(216, 300, 3.85d);
         Stage third = new Stage(300, Integer.MAX_VALUE, 6.70d);
