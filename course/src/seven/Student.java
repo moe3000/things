@@ -7,7 +7,7 @@ public class Student implements Serializable {
     private static final long serialVersionUID = 1L;
 
     //学号
-    private String no;
+    private int no;
     //姓名
     private String name;
     //性别
@@ -18,18 +18,18 @@ public class Student implements Serializable {
     public Student() {
     }
 
-    public Student(String no, String name, String sex, String major) {
+    public Student(int no, String name, String sex, String major) {
         this.no = no;
         this.name = name;
         this.sex = sex;
         this.major = major;
     }
 
-    public String getNo() {
+    public int getNo() {
         return no;
     }
 
-    public void setNo(String no) {
+    public void setNo(int no) {
         this.no = no;
     }
 
@@ -57,13 +57,8 @@ public class Student implements Serializable {
         this.major = major;
     }
 
-    public String writeToLine() {
-        if (no == null || name == null || sex == null || major == null) {
-            throw new MISException("信息不全，请重新输入");
-        }
-        return no + "," + name + "," + sex + "," + major;
+    @Override
+    public String toString() {
+        return "学号:" + no +", 姓名:" + name + ", 性别:" + sex + ", 专业:" + major;
     }
-
-
-
 }
