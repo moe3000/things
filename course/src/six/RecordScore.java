@@ -27,10 +27,8 @@ public class RecordScore {
             //拆分数据
             String[] s = line.split(" ");
 
-            //TODO 判断成绩格式
-
             //累计总分 和 人数
-            scoreSum = scoreSum + Double.valueOf(s[1]);
+            scoreSum = scoreSum + Double.parseDouble(s[1]);
             num++;
             sb.append(line);
             sb.append("\r\n");

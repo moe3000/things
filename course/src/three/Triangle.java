@@ -6,11 +6,7 @@ import java.util.Scanner;
 public class Triangle {
 
     public static String check(int a, int b, int c) {
-        //判断三角形 边长度排序， 假设为 a < b < c 要求a + b > c
-        if (a + b <= c
-                || a + c <= b
-                || b + c <= a
-        ) {
+        if (a + b <= c || a + c <= b || b + c <= a) {
             return "NO";
         }
 
@@ -26,7 +22,7 @@ public class Triangle {
             return "ZJ";
         }
 
-        return "NO";
+        return "YB";
     }
 
     public static void main(String[] args) {
