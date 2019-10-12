@@ -34,10 +34,10 @@ public class AllHomworkServlet extends HttpServlet {
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
         out.println("<!DOCTYPE html><html><head>");
-        out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><title>已上传的祖业</title>");
+        out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><title>已上传的作业</title>");
         out.println("</head><body>");
         out.println("<table border=1>");
-        out.println("<h4>已上传的祖业</h4>");
+        out.println("<h4>已上传的作业</h4>");
         out.println("<tr><td>序号</td><td>学号</td><td>姓名</td><td>作业标题</td><td>上传时间</td><td>下载</td>");
 
         for (int i = 0; i < homeworks.size(); i++) {
@@ -48,7 +48,7 @@ public class AllHomworkServlet extends HttpServlet {
             out.println("<td>"+ homework.getName() +"</td>");
             out.println("<td>"+ homework.getTitle() +"</td>");
             out.println("<td>"+ homework.getUploadTime() +"</td>");
-            out.println("<td>"+ "<a href=''>下载</a>" +"</td>");
+            out.println("<td>"+ "<a href='/downloadHomework.do?account=" + homework.getAccount() + "&" + "filename=" + homework.getFilename() + "'>下载</a>" +"</td>");
             out.println("</tr>");
         }
         out.println("</table>");
