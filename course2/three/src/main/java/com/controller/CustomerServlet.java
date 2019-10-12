@@ -86,8 +86,7 @@ public class CustomerServlet extends HttpServlet {
     }
 
     private boolean verifyPwd(String pwd) {
-//        return pwd.matches("^(?![0-9]+$)(?![^0-9]+$)(?![a-zA-Z]+$)(?![^a-zA-Z]+$)(?![a-zA-Z0-9]+$)[a-zA-Z0-9\\\\S]+$");
-        return true;
+        return pwd.matches("^(?![^a-zA-Z]+$)(?!\\\\D+$).{8,16}$");
     }
 
     private boolean verifyName(String name) {
@@ -106,7 +105,7 @@ public class CustomerServlet extends HttpServlet {
     }
 
     private boolean verifyIdCard(String idCard) {
-        return true;
+        return idCard.matches("^(^[1-9]\\d{7}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}$)|(^[1-9]\\d{5}[1-9]\\d{3}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])((\\d{4})|\\d{3}[X|x])$)$");
     }
 
     private boolean verifyEmail(String email) {
