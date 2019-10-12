@@ -29,6 +29,7 @@ public class UploadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String title = req.getParameter("title");
+        title = new String(title.getBytes("iso-8859-1"), "UTF-8");
         System.out.println(title);
         String path1 = this.getServletContext().getRealPath("/");
         System.out.println(path1);
@@ -68,7 +69,7 @@ public class UploadServlet extends HttpServlet {
 
         Writer writer = new BufferedWriter(
                 new OutputStreamWriter(
-                        new FileOutputStream(homeworkFile), "UTF-8"));
+                        new FileOutputStream(homeworkFile, true), "UTF-8"));
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
