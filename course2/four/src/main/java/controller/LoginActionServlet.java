@@ -25,7 +25,7 @@ public class LoginActionServlet extends HttpServlet {
         PrintWriter out = resp.getWriter();
 
 
-        String path = req.getRealPath("/")+ "user.txt";
+        String path = this.getServletContext().getRealPath("/")+ "user.txt";
         File file = new File(path);
 
         List<UserBean> users = SysUtils.getAllUsers(file);
@@ -40,7 +40,11 @@ public class LoginActionServlet extends HttpServlet {
             }
 
             req.getSession().setAttribute("user", user);
-            req.getRequestDispatcher(resp.encodeURL("/studentOperation.jsp")).forward(req, resp);
+            if ("学生".equals(user.getType())) {
+                req.getRequestDispatcher(resp.encodeURL("/studentOperation.jsp")).forward(req, resp);
+            } else {
+                req.getRequestDispatcher(resp.encodeURL("/homework.html")).forward(req, resp);
+            }
             return;
         }
         out.println("不存在的用户");

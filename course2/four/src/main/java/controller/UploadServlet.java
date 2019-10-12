@@ -10,10 +10,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.io.Writer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -25,7 +29,7 @@ public class UploadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String title = req.getParameter("title");
-
+        System.out.println(title);
         String path1 = this.getServletContext().getRealPath("/");
         System.out.println(path1);
         String path = path1;
@@ -52,7 +56,7 @@ public class UploadServlet extends HttpServlet {
 
         String fileType = fname.substring(fname.lastIndexOf("."));
 
-        String newFileName = userBean.getAccount() + "_" + System.currentTimeMillis()  + fileType;
+        String newFileName = userBean.getAccount() + "_" + new java.util.Date().getTime()/1000  + fileType;
         p.write(path + "\\" + newFileName);
         out.println("文件上传成功");
 
@@ -62,18 +66,16 @@ public class UploadServlet extends HttpServlet {
             homeworkFile.createNewFile();
         }
 
-        FileWriter fw = new FileWriter(homeworkFile, true);
-        PrintWriter pw = new PrintWriter(fw);
+        Writer writer = new BufferedWriter(
+                new OutputStreamWriter(
+                        new FileOutputStream(homeworkFile), "UTF-8"));
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-        String line = userBean.getAccount() + " " + userBean.getName() + "  " + title + "   " +  sdf.format(new Date()) + "  " + newFileName;
-        pw.println(line);
-        pw.flush();
-        fw.flush();
-        pw.close();
-        fw.close();
-
+        String line = userBean.getAccount() + "|" + userBean.getName() + "|" + title + "|" +  sdf.format(new Date()) + "|" + newFileName;
+        writer.write(line + "\r\n");
+        writer.flush();
+        writer.close();
     }
 
 }
