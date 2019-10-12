@@ -13,7 +13,7 @@
     </div>
     <div>
         <label for="pwd">密码</label>
-        <input id="pwd" type="text" name="pwd">
+        <input id="pwd" type="password" name="pwd">
     </div>
     <div>
         <label for="name">姓名</label>
