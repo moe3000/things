@@ -1,11 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; UTF-8">
     <title>学生信息提交</title>
 </head>
 <body>
-    <form action="/submitStudentInfo.do">
+    <form action="/two/submitStudentInfo.do">
         <div>
             <label for="stuid">学号</label>
             <input id="stuid" type="text" name="stuid">
