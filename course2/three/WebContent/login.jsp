@@ -6,7 +6,7 @@
     <title>登录</title>
 </head>
 <body>
-<form action="/login.do">
+<form action="/three/login.do">
     <div>
         <label for="account">用户名</label>
         <input id="account" type="text" name="account">

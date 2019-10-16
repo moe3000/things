@@ -51,7 +51,7 @@ public class MyHomeworkServlet extends HttpServlet {
             out.println("<td>"+ homework.getName() +"</td>");
             out.println("<td>"+ homework.getTitle() +"</td>");
             out.println("<td>"+ homework.getUploadTime() +"</td>");
-            out.println("<td>"+ "<a href='/downloadHomework.do?account=" + homework.getAccount() + "&" + "filename=" + homework.getFilename() + "'>下载</a>" +"</td>");
+            out.println("<td>"+ "<a href='/four/downloadHomework.do?account=" + homework.getAccount() + "&" + "filename=" + homework.getFilename() + "'>下载</a>" +"</td>");
             out.println("</tr>");
         }
         out.println("</table>");

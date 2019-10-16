@@ -19,7 +19,7 @@ public class DownloadHomeworkServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserBean user = (UserBean) req.getSession().getAttribute("user");
         if (user == null) {
-            resp.sendRedirect("/login.jsp");
+            resp.sendRedirect("/four/login.jsp");
             return;
         }
 

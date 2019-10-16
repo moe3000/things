@@ -13,7 +13,7 @@
     <title>上传作业</title>
 </head>
 <body>
-    <form action="/upload.do" method="post" enctype="multipart/form-data">
+    <form action="/four/upload.do" method="post" enctype="multipart/form-data">
         <div>
             <label for="title">作业标题</label>
             <input id="title" type="text" name="title">

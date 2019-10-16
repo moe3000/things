@@ -6,7 +6,7 @@
     <title>注册</title>
 </head>
 <body>
-<form action="/register.do">
+<form action="/three/register.do">
     <div>
         <label for="account">用户名</label>
         <input id="account" type="text" name="account">

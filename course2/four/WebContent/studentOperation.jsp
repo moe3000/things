@@ -14,9 +14,9 @@
 </head>
 <body>
     <div>
-        <span><a href="/uploadHomework.jsp">上传作业</a></span>
-        <span><a href="/homework.html">查看所有作业</a></span>
-        <span><a href="/myHomework.html">我的作业</a></span>
+        <span><a href="/four/uploadHomework.jsp">上传作业</a></span>
+        <span><a href="/four/homework.html">查看所有作业</a></span>
+        <span><a href="/four/myHomework.html">我的作业</a></span>
     </div>
 </body>
 </html>

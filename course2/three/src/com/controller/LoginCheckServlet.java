@@ -24,7 +24,7 @@ public class LoginCheckServlet extends HttpServlet {
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
 
-        File file = new File("D:\\customer.txt");
+        File file = new File(this.getServletContext().getRealPath("/") + "customer.txt");
         if (!file.exists()) {
             if (!file.createNewFile()) {
                 // 文件创建失败
